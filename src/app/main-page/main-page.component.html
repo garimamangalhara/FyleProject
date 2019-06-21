@@ -1,0 +1,45 @@
+<div class="row configRow">
+    <div class="col-md-3">
+        <div>
+            <label>Select a city</label>
+        </div>
+        <p-dropdown [options]="cities" (onChange)="dt.filter($event.value,'city','startsWith')" styleClass="ui-column-filter"></p-dropdown>
+    </div>
+    <div class="col-md-4">
+        <button class="btn-warning favBtn" *ngIf="!favoriteFlag" (click)="listFavorites()">Show Favorites</button>
+        <button class="btn-warning favBtn" *ngIf="favoriteFlag" (click)="listAll()">Show all records</button>
+    </div>
+    <div class="col-md-3">
+        <label>Enter the table size</label>
+        <input type="text" placeholder="Table size" (keyup.enter)="dt.reset()" [(ngModel)]="pageSize">
+    </div>
+</div>
+<div class="ui-widget-header" style="padding:4px 10px;border-bottom: 0 none">
+    <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+    <input #gb type="text" class="globalFilter" pInputText size="50" placeholder="Global Filter">
+</div>
+<p-dataTable [hidden]="favoriteFlag" [value]="bankDetailList" [rows]="pageSize" [paginator]="true" [globalFilter]="gb" #dt
+    [(selection)]="favoriteBanks" (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)" (onRowClick)="goToDetailsPage($event)"
+    [responsive]="true">
+    <p-header>List of Banks</p-header>
+    <p-column selectionMode="multiple"></p-column>
+    <p-column field="ifsc" header="Ifsc " [filter]="true" filterPlaceholder="Search"></p-column>
+    <p-column field="branch" header="Branch " [filter]="true" filterPlaceholder="Search"></p-column>
+    <p-column field="address" header="Address " [filter]="true" filterPlaceholder="Search"></p-column>
+    <p-column field="city" header="City " [filter]="true" filterPlaceholder="Search"></p-column>
+    <p-column field="district" header="District " [filter]="true" filterPlaceholder="Search"></p-column>
+    <p-column field="state" header="State " [filter]="true" filterPlaceholder="Search"></p-column>
+    <p-column field="bank_name" header="Bank Name " [filter]="true" filterPlaceholder="Search"></p-column>
+</p-dataTable>
+<p-dataTable [hidden]="!favoriteFlag" [value]="favoriteBanks" [rows]="10" [paginator]="true" [globalFilter]="gb" #dt1 [(selection)]="favoriteBanks"
+    (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)" (onRowClick)="goToDetailsPage($event)" [responsive]="true">
+    <p-header>List of Cars</p-header>
+    <p-column selectionMode="multiple"></p-column>
+    <p-column field="ifsc" header="Ifsc " [filter]="true" filterPlaceholder="Search"></p-column>
+    <p-column field="branch" header="Branch " [filter]="true" filterPlaceholder="Search"></p-column>
+    <p-column field="address" header="Address " [filter]="true" filterPlaceholder="Search"></p-column>
+    <p-column field="city" header="City " [filter]="true" filterPlaceholder="Search"></p-column>
+    <p-column field="district" header="District " [filter]="true" filterPlaceholder="Search"></p-column>
+    <p-column field="state" header="State " [filter]="true" filterPlaceholder="Search"></p-column>
+    <p-column field="bank_name" header="Bank Name " [filter]="true" filterPlaceholder="Search"></p-column>
+</p-dataTable>

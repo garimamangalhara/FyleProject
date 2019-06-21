@@ -1,0 +1,6 @@
+.dataTable input{
+    width:100%;
+}
+.ui-datatable tbody > tr.ui-widget-content.ui-state-highlight{
+    background-color: #d39e00;
+}

@@ -1,0 +1,19 @@
+.form{
+    width:50%;
+    transform: translate(50%,50%);
+    border:1px solid #b7b69059;
+    border-radius:10px;
+    padding:20px;
+    background-color: #b7b69059;
+}
+.body{
+    background-color: #f3e3cdad;
+}
+
+.body label{
+    font-weight:bold;
+    padding-right:10px;
+}
+.tag{
+    font-weight:bold;
+}

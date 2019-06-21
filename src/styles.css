@@ -1,0 +1,55 @@
+/* You can add global styles to this file, and also import other style files */
+.ui-datatable tbody > tr.ui-widget-content.ui-state-highlight{
+    background-color: #d39e0094  !important;
+}
+.favBtn{
+    border-radius: 4px;
+    border: none;
+    font-size: 14px;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+}
+.ui-dropdown label.ui-dropdown-label,.ui-dropdown .ui-dropdown-trigger,
+.ui-state-highlight{
+    background-color: #98cbcc;
+    color:white;
+    border:none;
+}
+.ui-dropdown-items{
+    background-color: #98cbcc;
+}
+.ui-inputtext.ui-state-focus, .ui-inputtext:focus{
+    box-shadow: none;
+}
+p-dropdown:focus{
+    outline:none
+}
+.ui-widget-header,
+.ui-datatable tbody > tr.ui-widget-content,
+.ui-datatable tbody > tr.ui-widget-content.ui-datatable-odd{
+    background-color: #98cbcc;
+    color:black !important;
+    background-image: none;
+}
+.ui-datatable th.ui-state-default{
+    background-color: black;
+    color:grey;
+}
+.configRow>div{
+    text-align: center;
+    margin:20px;
+}
+.configRow>div>button,
+.configRow>div>input,
+.configRow>div>p-dropdown
+{
+    width:100%;
+}
+.globalFilter{
+    width:97%;
+    border-radius:3px;
+}
+.configRow label{
+    font-weight:bold;
+}
