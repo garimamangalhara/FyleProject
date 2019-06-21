@@ -66,9 +66,7 @@ export class MainPageComponent implements OnInit {
       console.log(new Set(cities))
     })
   }
-  filterList(field, dt) {
-    console.log("dt", dt)
-  }
+
   onRowSelect(e) {
     console.log("selected:", e, this.favoriteBanks)
     this.favoriteIfsc.push(e.data.ifsc)

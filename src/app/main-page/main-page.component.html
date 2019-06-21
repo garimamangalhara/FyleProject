@@ -3,7 +3,7 @@
         <div>
             <label>Select a city</label>
         </div>
-        <p-dropdown [options]="cities" (onChange)="dt.filter($event.value,'city','startsWith')" styleClass="ui-column-filter"></p-dropdown>
+        <p-dropdown [options]="cities" (onChange)="dt.filter($event.value,'city','startsWith');dtt.filter($event.value,'city','startsWith')" styleClass="ui-column-filter"></p-dropdown>
     </div>
     <div class="col-md-4">
         <button class="btn-warning favBtn" *ngIf="!favoriteFlag" (click)="listFavorites()">Show Favorites</button>
@@ -11,7 +11,7 @@
     </div>
     <div class="col-md-3">
         <label>Enter the table size</label>
-        <input type="text" placeholder="Table size" (keyup.enter)="dt.reset()" [(ngModel)]="pageSize">
+        <input type="text" placeholder="Table size" (keyup.enter)="dtt.reset();dt.reset();" [(ngModel)]="pageSize">
     </div>
 </div>
 <div class="ui-widget-header" style="padding:4px 10px;border-bottom: 0 none">
@@ -31,7 +31,7 @@
     <p-column field="state" header="State " [filter]="true" filterPlaceholder="Search"></p-column>
     <p-column field="bank_name" header="Bank Name " [filter]="true" filterPlaceholder="Search"></p-column>
 </p-dataTable>
-<p-dataTable [hidden]="!favoriteFlag" [value]="favoriteBanks" [rows]="10" [paginator]="true" [globalFilter]="gb" #dt1 [(selection)]="favoriteBanks"
+<p-dataTable [hidden]="!favoriteFlag" [value]="favoriteBanks" [rows]="pageSize" [paginator]="true" [globalFilter]="gb" #dtt [(selection)]="favoriteBanks"
     (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)" (onRowClick)="goToDetailsPage($event)" [responsive]="true">
     <p-header>List of Cars</p-header>
     <p-column selectionMode="multiple"></p-column>
