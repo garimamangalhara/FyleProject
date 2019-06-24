@@ -33,7 +33,7 @@
 </p-dataTable>
 <p-dataTable [hidden]="!favoriteFlag" [value]="favoriteBanks" [rows]="pageSize" [paginator]="true" [globalFilter]="gb" #dtt [(selection)]="favoriteBanks"
     (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)" (onRowClick)="goToDetailsPage($event)" [responsive]="true">
-    <p-header>List of Cars</p-header>
+    <p-header>List of Banks</p-header>
     <p-column selectionMode="multiple"></p-column>
     <p-column field="ifsc" header="Ifsc " [filter]="true" filterPlaceholder="Search"></p-column>
     <p-column field="branch" header="Branch " [filter]="true" filterPlaceholder="Search"></p-column>
